@@ -51,10 +51,10 @@ def compute_forecast_metrics(val_df: pd.DataFrame, target_col: str) -> Dict[str,
 
     metrics: Dict[str, Any] = {
         "val_rows": int(len(val_df)),
-        "rmse": round(rmse, 4),
-        "mae": round(mae, 4),
+        "rmse": round(rmse, 2),
+        "mae": round(mae, 2),
         "wape_pct": round(wape * 100, 2),
-        "mean_bias_units": round(bias, 4),
+        "mean_bias_units": round(bias, 2),
         "total_true_demand_units": round(total_actual_demand, 2),
         "unmet_demand_units": round(unmet_demand_units, 2),
         "excess_inventory_units": round(excess_inventory_units, 2),
@@ -68,8 +68,8 @@ def compute_forecast_metrics(val_df: pd.DataFrame, target_col: str) -> Dict[str,
         g_pred = group["predicted_demand"].to_numpy()
         g_wape = float(np.sum(np.abs(g_true - g_pred)) / max(np.sum(g_true), 1e-8))
         category_metrics[str(category)] = {
-            "rmse": round(float(root_mean_squared_error(g_true, g_pred)), 4),
-            "mae": round(float(mean_absolute_error(g_true, g_pred)), 4),
+            "rmse": round(float(root_mean_squared_error(g_true, g_pred)), 2),
+            "mae": round(float(mean_absolute_error(g_true, g_pred)), 2),
             "wape_pct": round(g_wape * 100, 2),
         }
     metrics["by_category"] = category_metrics
@@ -81,8 +81,8 @@ def compute_forecast_metrics(val_df: pd.DataFrame, target_col: str) -> Dict[str,
         cs_pred = cold_start["predicted_demand"].to_numpy()
         metrics["cold_start_sku_metrics"] = {
             "rows": int(len(cold_start)),
-            "rmse": round(float(root_mean_squared_error(cs_true, cs_pred)), 4),
-            "mae": round(float(mean_absolute_error(cs_true, cs_pred)), 4),
+            "rmse": round(float(root_mean_squared_error(cs_true, cs_pred)), 2),
+            "mae": round(float(mean_absolute_error(cs_true, cs_pred)), 2),
         }
 
     return metrics

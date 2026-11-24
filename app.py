@@ -122,8 +122,8 @@ def simulate_demand():
         "sku": sku,
         "region": region,
         "category": str(base_row["category"].iloc[0]),
-        "baseline_demand": round(baseline_pred, 1),
-        "predicted_demand": round(simulated_pred, 1),
+        "baseline_demand": round(baseline_pred, 2),
+        "predicted_demand": round(simulated_pred, 2),
         "projected_revenue": round(simulated_pred * custom_price, 2),
     })
 
