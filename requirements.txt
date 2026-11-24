@@ -7,3 +7,4 @@ lightgbm
 pyyaml
 pytest
 pyarrow
+flask
