@@ -95,11 +95,11 @@ Evaluated on a trailing out-of-time holdout (**2,071 SKU-weeks** / **123,742 val
 
 | Metric | Value | Notes |
 | :--- | :---: | :--- |
-| **WAPE** | `12.38%`[cite: 1] | Volume-weighted error robust to low/zero-demand SKU-weeks |
-| **RMSE / MAE** | `10.58` / `7.39`[cite: 1] | Unit-level forecast error on `true_demand` |
-| **Mean Bias** | `-1.24 units`[cite: 1] | Slight conservative lean on average |
-| **Projected Stockout Loss** | `$455,105.71`[cite: 1] | Across `8,937` unmet units where demand exceeded forecast[cite: 1] |
-| **Excess Inventory** | `6,378 units`[cite: 1] | Units where forecast exceeded `true_demand`[cite: 1] |
+| **WAPE** | `12.38%` | Volume-weighted error robust to low/zero-demand SKU-weeks |
+| **RMSE / MAE** | `10.58` / `7.39` | Unit-level forecast error on `true_demand` |
+| **Mean Bias** | `-1.24 units` | Slight conservative lean on average |
+| **Projected Stockout Loss** | `$455,105.71` | Across `8,937` unmet units where demand exceeded forecast |
+| **Excess Inventory** | `6,378 units` | Units where forecast exceeded `true_demand` |
 
 ---
 
