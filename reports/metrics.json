@@ -1,0 +1,53 @@
+{
+  "val_rows": 2071,
+  "rmse": 10.5784,
+  "mae": 7.3949,
+  "wape_pct": 12.38,
+  "mean_bias_units": -1.2361,
+  "total_true_demand_units": 123742.0,
+  "unmet_demand_units": 8937.37,
+  "excess_inventory_units": 6377.51,
+  "estimated_stockout_revenue_loss_usd": 455105.71,
+  "by_category": {
+    "apparel": {
+      "rmse": 14.9221,
+      "mae": 10.3073,
+      "wape_pct": 10.42
+    },
+    "beauty": {
+      "rmse": 9.0243,
+      "mae": 7.2155,
+      "wape_pct": 12.88
+    },
+    "books_media": {
+      "rmse": 5.7092,
+      "mae": 4.4418,
+      "wape_pct": 16.84
+    },
+    "electronics": {
+      "rmse": 10.4492,
+      "mae": 7.1517,
+      "wape_pct": 13.54
+    },
+    "grocery": {
+      "rmse": 15.3574,
+      "mae": 11.144,
+      "wape_pct": 11.08
+    },
+    "home_kitchen": {
+      "rmse": 7.9579,
+      "mae": 6.2381,
+      "wape_pct": 11.51
+    },
+    "sports_outdoor": {
+      "rmse": 7.989,
+      "mae": 5.9397,
+      "wape_pct": 14.37
+    },
+    "toys_games": {
+      "rmse": 9.7389,
+      "mae": 7.1037,
+      "wape_pct": 13.87
+    }
+  }
+}

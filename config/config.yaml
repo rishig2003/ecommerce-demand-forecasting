@@ -1,0 +1,46 @@
+paths:
+  raw_data: "data/raw/ecommerce_demand_weekly.csv"
+  processed_data: "data/processed/features.parquet"
+  model_output: "models/lgbm_demand_model.txt"
+  metrics_output: "reports/metrics.json"
+
+schema:
+  date_col: "date"
+  entity_cols: ["sku", "region"]
+  categorical_cols: ["sku", "category", "region"]
+  target_col: "true_demand"
+  # Columns known only after sales occur (must be excluded from model features)
+  leakage_cols:
+    - "units_sold"
+    - "true_demand"
+    - "returns"
+    - "net_units"
+    - "revenue"
+    - "stockout"
+
+features:
+  # Weekly lag periods (since date is weekly Monday)
+  lag_weeks: [1, 2, 4, 8, 12]
+  rolling_windows: [4, 8, 12]
+  price_lag_weeks: [1, 4]
+
+split:
+  # Number of trailing weeks held out for validation/testing
+  val_weeks: 12
+
+model:
+  params:
+    objective: "regression"
+    metric: "rmse"
+    boosting_type: "gbdt"
+    learning_rate: 0.05
+    num_leaves: 31
+    max_depth: -1
+    min_child_samples: 20
+    subsample: 0.8
+    colsample_bytree: 0.8
+    n_estimators: 1000
+    random_state: 42
+    n_jobs: -1
+    verbose: -1
+  early_stopping_rounds: 50

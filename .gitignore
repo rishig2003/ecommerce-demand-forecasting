@@ -1,0 +1,15 @@
+# Python & uv environments
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+
+# macOS system files
+.DS_Store
+
+# Large raw/processed data & trained model binaries
+data/raw/*.csv
+data/processed/*.parquet
+models/*.txt
+models/*.pkl
