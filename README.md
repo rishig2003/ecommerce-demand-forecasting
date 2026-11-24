@@ -102,9 +102,3 @@ Evaluated on a trailing out-of-time holdout (**2,071 SKU-weeks** / **123,742 val
 | **Excess Inventory** | `6,378 units` | Units where forecast exceeded `true_demand` |
 
 ---
-
-## Future Improvements
-
-* **Asymmetric / Quantile Loss:** Tune quantile objectives (e.g., $\alpha > 0.5$) for high-margin SKUs where stockout opportunity cost outweighs holding cost.
-* **Safety Stock Buffer:** Combine point forecasts with rolling demand volatility to set dynamic reorder points.
-* **Automated Drift Monitoring:** Track incoming feature distributions and rolling WAPE across SKU categories and cold-start launches in production.
